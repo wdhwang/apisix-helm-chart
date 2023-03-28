@@ -23,12 +23,14 @@ replicaCount: 1
 
 image:
   # -- Apache APISIX Dashboard image repository
-  repository: apache/apisix-dashboard
+  #repository: apache/apisix-dashboard
+  repository: wdhwang/apisix-dashboard
   # -- Apache APISIX Dashboard image pull policy
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   # Apache APISIX Dashboard image tag (immutable tags are recommended)
-  tag: 3.0.0-alpine
+  #tag: 3.0.0-alpine
+  tag: latest
 
 # -- Docker registry secret names as an array
 imagePullSecrets: []
@@ -112,7 +114,8 @@ config:
 
 service:
   # -- Service type
-  type: ClusterIP
+  #type: ClusterIP
+  type: NodePort
   # -- Service HTTP port
   port: 80
 
